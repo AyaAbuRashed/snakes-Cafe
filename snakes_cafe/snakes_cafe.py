@@ -35,7 +35,7 @@ def chooseItem():
     i=0
     itemList=[]
     while i < 10 :
-     item=input('>>')
+     item=input('>')
      if item not in lists :
          print("Opps Your order not found !, Enter a valid order")
      else :    
