@@ -7,8 +7,11 @@ print('****************************************')
 list1=['Appetizers','-----','wings','cookies','spring rolls','   ']
 list2=['Entrees','-----','salmon','steak','meat tornado','a literal garden','  ']
 list3=['Desserts','-----','ice creem','cake','pie','   ']
-list4=['Drinks','-----','Tea','Coffee','unicorn','   ']
+list4=['Drinks','-----','tea','coffee','unicorn','   ']
 
+"""
+function to print the menu 
+"""
 def menu():
  for x in list1:
      print(x)
@@ -20,18 +23,26 @@ def menu():
      print(n)
 
 menu()  
+
+"""
+function that allows the user to pick up an order and return back what he choose and be able to quit 
+"""
 def chooseItem():
-    count=0
+    lists=['salmon','steak','meat tornado','a literal garden','wings','cookies','spring rolls','ice creem','cake','pie','tea','coffee','unicorn']
     print('***********************************')
     print('** What would you like to order? **')
     print('***********************************')
     i=0
+    itemList=[]
     while i < 10 :
-     item=input()
-     count += 1 
+     item=input('>>')
+     if item not in lists :
+         print("Opps Your order not found !, Enter a valid order")
+     else :    
+         itemList.append(item)
      if item=='quit' :
          break
-     print(count, 'order of ' + item +' have been added to your meal ')
+     print('** ',itemList.count(item), ' order of ' + item +' have been added to your meal **')
 
 
 chooseItem()
